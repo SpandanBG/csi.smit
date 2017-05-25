@@ -1,0 +1,25 @@
+html,body{
+	height: 100%;
+	padding: 0;
+	width: 100%;
+}
+
+#wrapper{
+	min-height: 100%;
+	position: relative;
+}
+
+#header{
+	width: 100%;
+}
+
+#footer{
+	width: 100%;
+	height: inherit;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: #000000;
+	color: #ffffff;
+	text-align: center;
+}
