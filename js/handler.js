@@ -16,16 +16,25 @@ $(document).ready(function (){
 		$('#content').css('padding-top',$('nav').height()+"px");
 		$('#content').css('padding-bottom',$('#footer').height()+"px");
 		$('.homefront').css('padding-top',$('nav').height()+ 50 +"px");
-		$('.homefront').css('width',$(window).width() - 25 + "px");
-		$('.homemain').css('height',$('.homeback').height()>=$('.homefront').height()?$('.homeback').height():($('.homefront').height()+$('nav').height()+ 50)+"px");
 		if(window.matchMedia('(max-width: 767px)').matches){
 			$('div.homefront span').css('font-size','1.35em');
 		} else if(window.matchMedia('(min-width: 768px)').matches){
 			$('div.homefront span').css('font-size','2em');
 		}
 	}
+	function homefix(){
+		var h1 = $('.homeback').height();
+		var h2 = $('.homefront').height() + $('nav').height() + 50;
+		if(h1>h2){
+			$('.homemain').css('height',h1+'px');
+		} else {
+			$('.homemain').css('height',h2+'px');
+		}
+	}
 	$(window).resize(function (){
 		respond();
+		homefix();
 	});
 	respond();
+	homefix();
 });
